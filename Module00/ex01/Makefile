@@ -1,5 +1,5 @@
 NAME 			= 	phonebook
-COMPILE			= 	clang++ -Wall -Werror -Wextra
+COMPILE			= 	clang++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	*.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)
