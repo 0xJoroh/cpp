@@ -93,7 +93,7 @@ int getContactIndex()
 		}
 		index = std::stoi(input);
 		if (index > 0 && index <= 8)
-			return index;
+			return index - 1;
 		std::cout << "This index does not exist." << std::endl;
 	}
 }
@@ -121,9 +121,7 @@ int main()
 			showColumns();
 			for (int i = 0; i < 8; i++)
 				phoneBook[i].search();
-			int index = getContactIndex();
-			if (index > 0 && index <= 8)
-				phoneBook[index - 1].showDetails();
+			phoneBook[getContactIndex()].showDetails();
 		}
 		else if (!command.compare("EXIT"))
 			break;

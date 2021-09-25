@@ -1,0 +1,17 @@
+NAME 			=	zombie
+COMPILE			=	clang++ -Wall -Werror -Wextra
+SRC 			=	*.cpp
+OBJS			=	$(SRC:.cpp=.o)
+all: $(NAME)
+$(NAME): $(SRC)
+	@$(COMPILE) $(SRC) -o $(NAME)
+
+bonus: $(NAME)
+
+clean:
+	@rm -rf $(OBJS)
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all
