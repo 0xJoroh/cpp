@@ -1,19 +1,6 @@
 #include "PhoneBook.hpp"
 
 
-
-void showColumns()
-{
-	cout << std::setw(10) << "Index"
-			  << "|";
-	cout << std::setw(10) << "First Name"
-			  << "|";
-	cout << std::setw(10) << "Last Name"
-			  << "|";
-	cout << std::setw(10) << "NickName";
-	cout << std::endl;
-}
-
 bool isValidIndex(string index)
 {
 	for (int i = 0; i < (int)index.length(); i++)
@@ -21,6 +8,7 @@ bool isValidIndex(string index)
 			return false;
 	return true;
 }
+
 int getContactIndex()
 {
 	int index;
@@ -44,9 +32,7 @@ int getContactIndex()
 int main()
 {
 	PhoneBook phoneBook;
-
 	string command;
-	int num = 0;// Contact Index
 
 	while (1)
 	{
@@ -54,22 +40,18 @@ int main()
 		getline(cin, command);
 
 		if (command == "ADD")
+			phoneBook.add();
+		else if (command == "SEARCH")
 		{
-			if (num == 8)
-				num = 0;
-			phoneBook[num].add(num + 1);
-			num++;
+			phoneBook.search();
+			// showColumns();
+			// for (int i = 0; i < 8; i++)
+			// 	phoneBook[i].search();
+			// int index = getContactIndex();
+			// if (index > 0 && index <= 8)
+			// 	phoneBook[index - 1].showDetails();
 		}
-		// else if (command == "SEARCH")
-		// {
-		// 	showColumns();
-		// 	for (int i = 0; i < 8; i++)
-		// 		phoneBook[i].search();
-		// 	int index = getContactIndex();
-		// 	if (index > 0 && index <= 8)
-		// 		phoneBook[index - 1].showDetails();
-		// }
-		else if (command == "EXIT")
+		if (command == "EXIT")
 			break;
 	}
 	return 0;

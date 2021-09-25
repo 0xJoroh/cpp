@@ -13,15 +13,17 @@
 class Contact
 {
 private:
-	string _firstName;
-	string _lastName;
-	string _nickName;
-	string _phoneNumber;
-	string _darkestSecret;
+	static string _fields[5];
+	string _values[5];
+	// string _lastName;
+	// string _nickName;
+	// string _phoneNumber;
+	// string _darkestSecret;
 public:
 	Contact();
 	~Contact();
-	void	setFields(string firstName, string lastName, string nickName, string phoneNumber, string darkestSecret);
+	void setField(int index);
+	string getField(int index);
 };
 
 #endif

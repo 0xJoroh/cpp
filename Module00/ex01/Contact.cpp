@@ -2,17 +2,19 @@
 
 Contact::Contact()
 {
-	this->index = 0;
 }
 
 Contact::~Contact()
 {
 }
 
-void Contact::setFields(string firstName, string lastName, string nickName, string phoneNumber, string darkestSecret){
-	this->_firstName = firstName;
-	this->_lastName = lastName;
-	this->_nickName = nickName;
-	this->_phoneNumber = phoneNumber;
-	this->_darkestSecret = darkestSecret;
+void Contact::setField(int index){
+	cout << _fields[index] << ": ";
+	getline(cin, _values[index]);
 }
+
+string Contact::getField(int index){
+	return _values[index];
+}
+
+string Contact::_fields[5] = {"firstName", "lastName", "nickName", "phoneNumber", "darkestSecret"};

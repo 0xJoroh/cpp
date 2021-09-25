@@ -2,5 +2,5 @@
 
 void randomChump(std::string name)
 {
-	newZombie(name)->announce();
+	Zombie obj = Zombie(name);
 }

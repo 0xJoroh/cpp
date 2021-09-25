@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 // Member functions definitions
-void	Zombie::announce(void)
+void Zombie::announce(void)
 {
 	std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << std::endl;
 }
@@ -9,9 +9,10 @@ void	Zombie::announce(void)
 Zombie::Zombie(std::string name)
 {
 	this->name = name;
+	announce();
 }
 
 Zombie::~Zombie()
 {
-	std::cout << this->name << std::endl;
+	std::cout << this->name << " Dies" << std::endl;
 }

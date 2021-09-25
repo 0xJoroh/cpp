@@ -2,51 +2,76 @@
 
 PhoneBook::PhoneBook()
 {
+	_index = 0;
 }
 
 PhoneBook::~PhoneBook()
 {
 }
 
-void PhoneBook::add(int index)
+void PhoneBook::add()
 {
-	this->index = index;
-	std::cout << "First Name: ";
-	std::getline(std::cin, this->firstName);
-	std::cout << "Last Name: ";
-	std::getline(std::cin, this->lastName);
-	std::cout << "NickName: ";
-	std::getline(std::cin, this->nickName);
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, this->phoneNumber);
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, this->darkestSecret);
+	Contact cont;
+
+	// if (_index == 8)
+	// 		_index = 0;
+	for (int i = 0; i < 5; i++)
+		cont.setField(i);
+	_index++;
+}
+
+void PhoneBook::showColumns()
+{
+	cout << std::setw(10) << "Index"
+		 << "|";
+	cout << std::setw(10) << "First Name"
+		 << "|";
+	cout << std::setw(10) << "Last Name"
+		 << "|";
+	cout << std::setw(10) << "NickName";
+	cout << std::endl;
 }
 
 void PhoneBook::search()
 {
-	if (!this->index)
-		return;
-	std::cout << std::setw(10) << this->index << "|";
-	std::string output;
+	this->showColumns();
+	// cout << _index;
+	Contact tmp;
+	for (int i = 0; i < _index; i++)
+	{
+		// cout << "[" << i << "]" << std::endl;
+		tmp = this->getContact(_index);
+		cout << tmp.getField(i) << std::endl;
+	}
 
-	output = this->firstName.substr(0, 9) + ((int)this->firstName.length() > 9 ? "." : "");
-	std::cout << std::setw(10) << output << "|";
+	// if (!this->index)
+	// return;
+	// cout << std::setw(10) << this->index << "|";
+	// string output;
 
-	output = this->lastName.substr(0, 9) + ((int)this->lastName.length() > 9 ? "." : "");
-	std::cout << std::setw(10) << output << "|";
+	// output = firstName.substr(0, 9) + ((int)firstName.length() > 9 ? "." : "");
+	// cout << std::setw(10) << output << "|";
 
-	output = this->nickName.substr(0, 9) + ((int)this->nickName.length() > 9 ? "." : "");
-	std::cout << std::setw(10) << output;
-	std::cout << std::endl;
+	// output = lastName.substr(0, 9) + ((int)lastName.length() > 9 ? "." : "");
+	// cout << std::setw(10) << output << "|";
+
+	// output = nickName.substr(0, 9) + ((int)nickName.length() > 9 ? "." : "");
+	// cout << std::setw(10) << output;
+	// cout << std::endl;
 }
+
 void PhoneBook::showDetails()
 {
-	if (!this->index)
-		return;
-	std::cout << this->firstName << std::endl;
-	std::cout << this->lastName << std::endl;
-	std::cout << this->nickName << std::endl;
-	std::cout << this->phoneNumber << std::endl;
-	std::cout << this->darkestSecret << std::endl;
+	// if (!this->index)
+	// 	return;
+	// cout << this->firstName << std::endl;
+	// cout << this->lastName << std::endl;
+	// cout << this->nickName << std::endl;
+	// cout << this->phoneNumber << std::endl;
+	// cout << this->darkestSecret << std::endl;
+}
+
+Contact PhoneBook::getContact(int index)
+{
+	return this->_contacts[index];
 }

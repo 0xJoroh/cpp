@@ -2,6 +2,10 @@
 
 int main()
 {
-	randomChump("test");
+	randomChump("Joroh");
+
+	Zombie *zHeap;
+	zHeap = newZombie("Ada");
+	delete zHeap;
 	return 0;
 }

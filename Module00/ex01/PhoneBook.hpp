@@ -7,14 +7,16 @@
 class PhoneBook
 {
 private:
-	Contact contacts[CONTACTNUM];
-	int index;
+	Contact _contacts[CONTACTNUM];
+	int _index;
 
 public:
 	PhoneBook();
 	~PhoneBook();
-	void add(int index);
+	void add();
 	void search();
+	Contact getContact(int index);
+	void showColumns();
 	void showDetails();
 };
 
