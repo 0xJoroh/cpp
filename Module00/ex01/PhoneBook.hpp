@@ -1,13 +1,13 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
-#define CONTACTNUM 8
+#define CONTACT_NUM 8
+#define FIELDS_NUM 5
 
 #include "Contact.hpp"
-
 class PhoneBook
 {
 private:
-	Contact _contacts[CONTACTNUM];
+	Contact _contacts[CONTACT_NUM];
 	int _index;
 
 public:

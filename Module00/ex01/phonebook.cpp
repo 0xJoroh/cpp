@@ -15,9 +15,9 @@ void PhoneBook::add()
 
 	// if (_index == 8)
 	// 		_index = 0;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < FIELDS_NUM; i++)
 		cont.setField(i);
-	_index++;
+	this->_index++;
 }
 
 void PhoneBook::showColumns()
@@ -37,9 +37,9 @@ void PhoneBook::search()
 	this->showColumns();
 	// cout << _index;
 	Contact tmp;
-	for (int i = 0; i < _index; i++)
+	for (int i = 0; i <= _index; i++)
 	{
-		// cout << "[" << i << "]" << std::endl;
+		cout << "index: [" << this->_index << "]" << std::endl;
 		tmp = this->getContact(_index);
 		cout << tmp.getField(i) << std::endl;
 	}
