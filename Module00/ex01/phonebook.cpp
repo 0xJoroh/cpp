@@ -2,7 +2,7 @@
 
 PhoneBook::PhoneBook()
 {
-	_index = 0;
+	this->_index = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -16,7 +16,8 @@ void PhoneBook::add()
 	// if (_index == 8)
 	// 		_index = 0;
 	for (int i = 0; i < FIELDS_NUM; i++)
-		cont.setField(i);
+		cont.setField(i); 
+	this->getContact(0).getFields();
 	this->_index++;
 }
 
@@ -29,20 +30,19 @@ void PhoneBook::showColumns()
 	cout << std::setw(10) << "Last Name"
 		 << "|";
 	cout << std::setw(10) << "NickName";
-	cout << std::endl;
+	cout << endl;
 }
 
 void PhoneBook::search()
 {
-	this->showColumns();
+	// this->showColumns();
 	// cout << _index;
-	Contact tmp;
-	for (int i = 0; i <= _index; i++)
-	{
-		cout << "index: [" << this->_index << "]" << std::endl;
-		tmp = this->getContact(_index);
-		cout << tmp.getField(i) << std::endl;
-	}
+
+	// for (int i = 0; i <= this->_index; i++)
+	// {
+	// 	cout << "index: [" << this->_index << "]" << endl;
+	// }
+	this->getContact(0).getFields();
 
 	// if (!this->index)
 	// return;
@@ -57,18 +57,18 @@ void PhoneBook::search()
 
 	// output = nickName.substr(0, 9) + ((int)nickName.length() > 9 ? "." : "");
 	// cout << std::setw(10) << output;
-	// cout << std::endl;
+	// cout << endl;
 }
 
 void PhoneBook::showDetails()
 {
 	// if (!this->index)
 	// 	return;
-	// cout << this->firstName << std::endl;
-	// cout << this->lastName << std::endl;
-	// cout << this->nickName << std::endl;
-	// cout << this->phoneNumber << std::endl;
-	// cout << this->darkestSecret << std::endl;
+	// cout << this->firstName << endl;
+	// cout << this->lastName << endl;
+	// cout << this->nickName << endl;
+	// cout << this->phoneNumber << endl;
+	// cout << this->darkestSecret << endl;
 }
 
 Contact PhoneBook::getContact(int index)

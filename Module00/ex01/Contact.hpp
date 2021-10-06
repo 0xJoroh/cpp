@@ -8,6 +8,7 @@
 #define string std::string
 #define cout std::cout
 #define cin std::cin
+#define endl std::endl
 #define getline(a,c) std::getline(a,c)
 
 class Contact
@@ -19,11 +20,12 @@ private:
 	// string _nickName;
 	// string _phoneNumber;
 	// string _darkestSecret;
+
 public:
 	Contact();
 	~Contact();
 	void setField(int index);
-	string getField(int index);
+	void getFields();
 };
 
 #endif

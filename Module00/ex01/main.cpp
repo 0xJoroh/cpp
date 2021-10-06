@@ -19,13 +19,13 @@ int getContactIndex()
 		getline(cin, input);
 		if (!isValidIndex(input))
 		{
-			cout << "Enter a valid index." << std::endl;
+			cout << "Enter a valid index." << endl;
 			continue;
 		}
 		index = std::stoi(input);
 		if (index > 0 && index <= 8)
 			return index;
-		cout << "This index does not exist." << std::endl;
+		cout << "This index does not exist." << endl;
 	}
 }
 
@@ -42,15 +42,7 @@ int main()
 		if (command == "ADD")
 			phoneBook.add();
 		else if (command == "SEARCH")
-		{
 			phoneBook.search();
-			// showColumns();
-			// for (int i = 0; i < 8; i++)
-			// 	phoneBook[i].search();
-			// int index = getContactIndex();
-			// if (index > 0 && index <= 8)
-			// 	phoneBook[index - 1].showDetails();
-		}
 		if (command == "EXIT")
 			break;
 	}

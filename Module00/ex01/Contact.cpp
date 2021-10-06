@@ -13,8 +13,8 @@ void Contact::setField(int index){
 	getline(cin, this->_values[index]);
 }
 
-string Contact::getField(int index){
-	return this->_values[index];
+void Contact::getFields(){
+	cout << "[" <<this->_values[0] << "]" << endl;
 }
 
 string Contact::_fields[5] = {"firstName", "lastName", "nickName", "phoneNumber", "darkestSecret"};
