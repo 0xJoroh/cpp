@@ -3,6 +3,7 @@
 PhoneBook::PhoneBook()
 {
 	this->_index = 0;
+	this->_count = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -11,14 +12,13 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::add()
 {
-	Contact cont;
-
-	// if (_index == 8)
-	// 		_index = 0;
+	if (this->_index == 8)
+			this->_index = 0;
 	for (int i = 0; i < FIELDS_NUM; i++)
-		cont.setField(i); 
-	this->getContact(0).getFields();
+		this->_contacts[this->_index].setContact(i); 
 	this->_index++;
+	if(this->_count < 8)
+		this->_count++;
 }
 
 void PhoneBook::showColumns()
@@ -35,29 +35,10 @@ void PhoneBook::showColumns()
 
 void PhoneBook::search()
 {
-	// this->showColumns();
-	// cout << _index;
+	this->showColumns();
 
-	// for (int i = 0; i <= this->_index; i++)
-	// {
-	// 	cout << "index: [" << this->_index << "]" << endl;
-	// }
-	this->getContact(0).getFields();
-
-	// if (!this->index)
-	// return;
-	// cout << std::setw(10) << this->index << "|";
-	// string output;
-
-	// output = firstName.substr(0, 9) + ((int)firstName.length() > 9 ? "." : "");
-	// cout << std::setw(10) << output << "|";
-
-	// output = lastName.substr(0, 9) + ((int)lastName.length() > 9 ? "." : "");
-	// cout << std::setw(10) << output << "|";
-
-	// output = nickName.substr(0, 9) + ((int)nickName.length() > 9 ? "." : "");
-	// cout << std::setw(10) << output;
-	// cout << endl;
+	for (int i = 0; i < this->_count; i++)
+		this->_contacts[i].getFields(i);
 }
 
 void PhoneBook::showDetails()
@@ -69,9 +50,4 @@ void PhoneBook::showDetails()
 	// cout << this->nickName << endl;
 	// cout << this->phoneNumber << endl;
 	// cout << this->darkestSecret << endl;
-}
-
-Contact PhoneBook::getContact(int index)
-{
-	return this->_contacts[index];
 }

@@ -9,6 +9,7 @@ class PhoneBook
 private:
 	Contact _contacts[CONTACT_NUM];
 	int _index;
+	int _count;
 
 public:
 	PhoneBook();

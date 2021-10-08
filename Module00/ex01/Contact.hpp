@@ -16,16 +16,12 @@ class Contact
 private:
 	static string _fields[5];
 	string _values[5];
-	// string _lastName;
-	// string _nickName;
-	// string _phoneNumber;
-	// string _darkestSecret;
 
 public:
 	Contact();
 	~Contact();
-	void setField(int index);
-	void getFields();
+	void setContact(int index);
+	void getFields(int index);
 };
 
 #endif
