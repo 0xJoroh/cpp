@@ -8,8 +8,8 @@ class PhoneBook
 {
 private:
 	Contact _contacts[CONTACT_NUM];
-	int _index;
-	int _count;
+	int _index;	// Contact position
+	int _count; // Contacts number
 
 public:
 	PhoneBook();
@@ -19,6 +19,8 @@ public:
 	Contact getContact(int index);
 	void showColumns();
 	void showDetails();
+	bool isValidIndex(string index);
+	int getContactIndex();
 };
 
 #endif

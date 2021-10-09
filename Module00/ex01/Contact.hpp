@@ -22,6 +22,8 @@ public:
 	~Contact();
 	void setContact(int index);
 	void getFields(int index);
+	void getDetails();
+	bool checkFields();
 };
 
 #endif

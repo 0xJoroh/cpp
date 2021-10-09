@@ -26,4 +26,19 @@ void Contact::getFields(int index)
 	cout << endl;
 }
 
+void Contact::getDetails()
+{
+	for (int i = 0 ; i < 5 ; i++)
+		cout << this->_values[i] << endl;
+}
+
+bool Contact::checkFields()
+{
+	int empty = 0;
+	for (int i = 0; i < 5; i++)
+		if (this->_values[i].empty())
+			empty++;
+	return empty != 5;
+}
+
 string Contact::_fields[5] = {"first name", "last name", "nickname", "phone number", "darkest secret"};
