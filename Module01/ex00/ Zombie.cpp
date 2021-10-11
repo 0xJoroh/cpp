@@ -3,16 +3,16 @@
 // Member functions definitions
 void Zombie::announce(void)
 {
-	std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << endl;
+	cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(string name)
 {
 	this->name = name;
-	announce();
+	this->announce();
 }
 
 Zombie::~Zombie()
 {
-	std::cout << this->name << " Dies" << endl;
+	cout << this->name << " Dies" << endl;
 }

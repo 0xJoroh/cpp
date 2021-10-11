@@ -1,7 +1,8 @@
 NAME 			= 	phonebook
 COMPILE			= 	clang++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	*.cpp
+SRC 			=	phonebook.cpp Contact.cpp main.cpp
 OBJS			=	$(SRC:.cpp=.o)
+
 all: $(NAME)
 $(NAME): $(SRC)
 	@$(COMPILE) $(SRC) -o $(NAME)
