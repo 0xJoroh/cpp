@@ -1,6 +1,6 @@
-NAME 			=	zombieAmali
+NAME 			=	zombieHfadyl
 COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	Zombie.cpp ZombieHorde.cpp main.cpp 
+SRC 			=	main.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)
 $(NAME): $(SRC)

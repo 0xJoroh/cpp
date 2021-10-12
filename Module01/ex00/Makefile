@@ -1,6 +1,6 @@
 NAME 			=	zombie
 COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	*.cpp
+SRC 			=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)
 $(NAME): $(SRC)
