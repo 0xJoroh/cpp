@@ -1,5 +1,5 @@
-#ifndef __HUMAN_A_H__
-#define __HUMAN_A_H__
+#ifndef __HUMANA_HPP__
+#define __HUMANA_HPP__
 
 #include "Weapon.hpp"
 
@@ -12,6 +12,7 @@ private:
 public:
     HumanA();
     ~HumanA();
+    HumanA(string name, Weapon weapon);
     void attack();
 };
 #endif

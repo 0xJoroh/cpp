@@ -1,5 +1,5 @@
-#ifndef __WEAPON_H__
-#define __WEAPON_H__
+#ifndef __WEAPON_HPP__
+#define __WEAPON_HPP__
 
 #include <string>
 #include <iostream>
@@ -15,8 +15,9 @@ private:
 
 public:
     //TODO: Check
-	const string getType();
-	void setType(string type);
+    const string getType();
+    void setType(string type);
+    Weapon(string type);
     Weapon();
     ~Weapon();
 };
