@@ -1,5 +1,9 @@
 #include "Karen.hpp"
 
+Karen::Karen() {}
+
+Karen::~Karen() {}
+
 void Karen::debug(void)
 {
     cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << endl;
@@ -22,7 +26,9 @@ void Karen::error(void)
 
 void Karen::complain(string level)
 {
-    void (Karen::*functions[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-    (void)level;
-    
+    string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    void (Karen::*f[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+    for (int i = 0; i < 4; i++)
+        if (level == levels[i])
+            (this->*f[i])();
 }

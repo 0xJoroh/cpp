@@ -4,9 +4,9 @@
 #include <string>
 #include <iostream>
 
-#define string std::string
-#define cout std::cout
-#define endl std::endl
+using std::string;
+using std::cout;
+using std::endl;
 
 class Karen
 {
