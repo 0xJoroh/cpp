@@ -1,28 +1,24 @@
 #include "Karen.hpp"
 
-
-
 int main(int argc, char const *argv[])
 {
+    if (argc != 2)
+        return 1;
+
     Karen obj;
-
-    for (int i = 0; i < 4; i++)
-        if (level == this->_levels[i])
-            return i;
-    
-
-    switch (level)
+    switch (obj.getLevel(argv[1]))
     {
+    case 0:
+        obj.complain("DEBUG");
     case 1:
-        break;
+        obj.complain("INFO");
     case 2:
-        break;
+        obj.complain("WARNING");
     case 3:
+        obj.complain("ERROR");
         break;
-    case 4:
-        break;
-    
     default:
+        cout << "[ Probably complaining about insignificant problems ]" << endl;
         break;
     }
     return 0;
