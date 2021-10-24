@@ -13,7 +13,7 @@ int main()
     string &stringREF = str;
 
     cout << endl;
-    cout << "string    address\t\t: \t" <<&str << endl;
+    cout << "string    address\t\t: \t" << &str << endl;
     cout << "stringPTR address\t\t: \t" << stringPTR << endl;
     cout << "stringREF address\t\t: \t" << &stringREF << endl;
     cout << endl;

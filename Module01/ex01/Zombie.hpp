@@ -7,7 +7,6 @@
 #define string std::string
 #define cout std::cout
 #define endl std::endl
-
 class Zombie
 {
 private:
