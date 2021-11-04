@@ -9,7 +9,6 @@ bool checkErrors(int argc, char const *argv[])
         std::cout << "Invalid arguments or empty S1/S2!" << std::endl;
         return false;
     }
-    //TODO:
     std::ifstream read(argv[1]); // read the file
     if (!read.is_open())
     {

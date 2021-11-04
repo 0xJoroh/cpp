@@ -6,13 +6,13 @@
 class HumanA
 {
 private:
-    Weapon _weapon;
+    Weapon *_weapon;
     string _name;
 
 public:
     HumanA();
     ~HumanA();
-    HumanA(string name, Weapon weapon);
+    HumanA(string name, Weapon &weapon);
     void attack();
 };
 #endif
