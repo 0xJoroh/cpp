@@ -1,8 +1,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-//TODO: In which case is it appropriate to store the Weapon as a pointer? And as a reference? Why?
-
 int main()
 {
     {

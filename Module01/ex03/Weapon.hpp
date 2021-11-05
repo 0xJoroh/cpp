@@ -14,7 +14,6 @@ private:
     string _type;
 
 public:
-    //TODO: Check
     const string getType();
     void setType(string type);
     Weapon(string type);
