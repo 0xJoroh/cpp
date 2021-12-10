@@ -1,6 +1,6 @@
-NAME 			=	karenFilter
+NAME 			=	fixed
 COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	main.cpp Karen.cpp
+SRC 			=	main.cpp Fixed.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)
 $(NAME): $(SRC)
