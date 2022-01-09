@@ -28,6 +28,19 @@ public:
     float toFloat( void ) const;
     int toInt( void ) const;
 
+    //ex02
+    // bool  operator>(const Fixed &fixed);
+    // bool  operator<(const Fixed &fixed);
+    // bool operator>=(const Fixed &fixed);
+    // bool operator<=(const Fixed &fixed);
+    // bool operator==(const Fixed &fixed);
+    // bool operator!=(const Fixed &fixed);
+
+    // Fixed operator+(const Fixed &fixed);
+    // Fixed operator-(const Fixed &fixed);
+    // Fixed operator*(const Fixed &fixed);
+    // Fixed operator/(const Fixed &fixed);
+
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &rhs);

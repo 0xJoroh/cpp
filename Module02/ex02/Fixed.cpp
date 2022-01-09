@@ -42,6 +42,7 @@ Fixed::Fixed(Fixed const &src)
 
 
 //ex01
+
 std::ostream &operator<<(std::ostream &os, const Fixed &rhs)
 {
     os << rhs.toFloat();
