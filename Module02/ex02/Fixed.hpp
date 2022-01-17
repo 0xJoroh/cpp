@@ -17,10 +17,9 @@ public:
     Fixed();
     ~Fixed();
     Fixed(const Fixed &fixed);
-    // Assignment Operators Overloading
-    Fixed &operator=(const Fixed &fixed);
     int getRawBits(void) const;
     void setRawBits(int const raw);
+    Fixed &operator=(const Fixed &fixed); // Assignment Operators Overloading
 
     //ex01
     Fixed(const int nbr);
@@ -29,20 +28,29 @@ public:
     int toInt( void ) const;
 
     //ex02
-    // bool  operator>(const Fixed &fixed);
-    // bool  operator<(const Fixed &fixed);
-    // bool operator>=(const Fixed &fixed);
-    // bool operator<=(const Fixed &fixed);
-    // bool operator==(const Fixed &fixed);
-    // bool operator!=(const Fixed &fixed);
+    bool  operator>(const Fixed &fixed) const;
+    bool  operator<(const Fixed &fixed) const;
+    bool operator>=(const Fixed &fixed) const;
+    bool operator<=(const Fixed &fixed) const;
+    bool operator==(const Fixed &fixed) const;
+    bool operator!=(const Fixed &fixed) const;
 
-    // Fixed operator+(const Fixed &fixed);
-    // Fixed operator-(const Fixed &fixed);
-    // Fixed operator*(const Fixed &fixed);
-    // Fixed operator/(const Fixed &fixed);
+    Fixed operator+(const Fixed &fixed) const;
+    Fixed operator-(const Fixed &fixed) const;
+    Fixed operator*(const Fixed &fixed) const;
+    Fixed operator/(const Fixed &fixed) const;
 
+    Fixed &operator++();
+    Fixed operator++( int n ); // initial with n if an argument is passed
+    Fixed &operator--();
+    Fixed operator--( int n ); // initial with n if an argument is passed
+
+    static Fixed &min(Fixed &left, Fixed &right);
+    static Fixed &max(Fixed &left, Fixed &right);
+    static const Fixed &min(const Fixed &left, const Fixed &right);
+    static const Fixed &max(const Fixed &left, const Fixed &right);
 };
-
 std::ostream &operator<<(std::ostream &os, const Fixed &rhs);
+
 
 #endif

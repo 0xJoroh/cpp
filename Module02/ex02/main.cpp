@@ -2,22 +2,47 @@
 
 int main(void)
 {
-    Fixed a;
-    Fixed const b(10);
-    Fixed const c(42.42f);
-    Fixed const d(b);
+    Fixed a(1);
+    Fixed const b(Fixed(5.05f) * Fixed(2));
 
-    a = Fixed(1234.4321f);
+    // comparison operators:
+    std::cout << "Comparison Operators (a, b)" << std::endl;
+    std::cout << "---------- a = " << a << " --- b = " << b << " ----------" << std::endl;
+    if (a > b)  std::cout << "a > b: true" << std::endl;
+    if (a < b)  std::cout << "a < b : true" << std::endl;
+    if (a >= b) std::cout << "a >= b : true" << std::endl;
+    if (a <= b) std::cout << "a <= b : true" << std::endl;
+    if (a == b) std::cout << "a == b : true" << std::endl;
+    if (a != b) std::cout << "a != b : true" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
+    // arithmetic operators
+    std::cout << "Arithmetic Operators (a, b)" << std::endl;
+    std::cout << "---------- a = " << a << " --- b = " << b << " ----------" << std::endl;
+    std::cout << "+ : " << a + b << std::endl;
+    std::cout << "- : " << a - b << std::endl;
+    std::cout << "* : " << a * b << std::endl;
+    std::cout << "/ : " << a / b << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    // pre-increment and post-increment
+    std::cout << "Pre-increment & Post-increment (a)" << std::endl;
+    std::cout << "----------" << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "++a " << ++a << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "a++ " << a++ << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << std::endl;
+
+    // pre-decrement and post-decrement
+
+    // min and max functions
+    std::cout << "min() and max() functions" << std::endl;
+    std::cout << "---------- a = " << a << " --- b = " << b << " ----------" << std::endl;
+    std::cout << "max: " << Fixed::max(a, b) << std::endl;
+    std::cout << "min: " << Fixed::min(a, b) << std::endl;
+    std::cout << std::endl;
 
     return 0;
 }
