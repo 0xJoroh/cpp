@@ -8,12 +8,18 @@ int main(void)
     // comparison operators:
     std::cout << "Comparison Operators (a, b)" << std::endl;
     std::cout << "---------- a = " << a << " --- b = " << b << " ----------" << std::endl;
-    if (a > b)  std::cout << "a > b: true" << std::endl;
-    if (a < b)  std::cout << "a < b : true" << std::endl;
-    if (a >= b) std::cout << "a >= b : true" << std::endl;
-    if (a <= b) std::cout << "a <= b : true" << std::endl;
-    if (a == b) std::cout << "a == b : true" << std::endl;
-    if (a != b) std::cout << "a != b : true" << std::endl;
+    if (a > b)
+        std::cout << "a > b: true" << std::endl;
+    if (a < b)
+        std::cout << "a < b : true" << std::endl;
+    if (a >= b)
+        std::cout << "a >= b : true" << std::endl;
+    if (a <= b)
+        std::cout << "a <= b : true" << std::endl;
+    if (a == b)
+        std::cout << "a == b : true" << std::endl;
+    if (a != b)
+        std::cout << "a != b : true" << std::endl;
     std::cout << std::endl;
 
     // arithmetic operators
@@ -33,6 +39,13 @@ int main(void)
     std::cout << "a = " << a << std::endl;
     std::cout << "a++ " << a++ << std::endl;
     std::cout << "a = " << a << std::endl;
+    std::cout << "----------" << std::endl;
+    a = 1;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "--a " << --a << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "a-- " << a-- << std::endl;
+    std::cout << "a = " << a << std::endl;
     std::cout << std::endl;
 
     // pre-decrement and post-decrement
@@ -40,8 +53,8 @@ int main(void)
     // min and max functions
     std::cout << "min() and max() functions" << std::endl;
     std::cout << "---------- a = " << a << " --- b = " << b << " ----------" << std::endl;
-    std::cout << "max: " << Fixed::max(a, b) << std::endl;
-    std::cout << "min: " << Fixed::min(a, b) << std::endl;
+    std::cout << "max: " << Fixed::max(a, a) << std::endl;
+    std::cout << "min: " << Fixed::min(a, a) << std::endl;
     std::cout << std::endl;
 
     return 0;

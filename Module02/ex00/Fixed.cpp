@@ -30,7 +30,7 @@ Fixed::Fixed(Fixed const &src)
 }
 
 // Assignment operator overload
-Fixed &Fixed::operator = (Fixed const &rhs)
+Fixed &Fixed::operator=(Fixed const &rhs)
 {
     if (this != &rhs)
     {

@@ -12,5 +12,8 @@ int main(void)
     cout << b.getRawBits() << endl;
     cout << c.getRawBits() << endl;
 
+    // a.setRawBits(7);
+    // cout << a.getRawBits() << endl;
+
     return 0;
 }
