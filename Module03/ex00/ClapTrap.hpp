@@ -19,8 +19,8 @@ public:
     ClapTrap();
     ~ClapTrap();
 
-    ClapTrap ClapTrap(const ClapTrap &copy);
-    ClapTrap operator=(const ClapTrap &rhs);
+    ClapTrap(const ClapTrap &copy);
+    ClapTrap &operator=(const ClapTrap &rhs);
 
     void attack(string const & target);
     void takeDamage(unsigned int amount);
