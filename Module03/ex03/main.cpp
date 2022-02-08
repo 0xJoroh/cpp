@@ -8,6 +8,7 @@ int main(void)
     test.attack("Target");
     test.takeDamage(15);
     test.beRepaired(7);
+    test.guardGate();
     test.highFivesGuys();
     test.whoAmI();
     std::cout << "-----------" << std::endl;
