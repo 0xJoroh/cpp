@@ -3,10 +3,11 @@
 int main(void)
 {
     ScavTrap obj("Joroh");
-    obj.attack("test");
-    obj.takeDamage(11);
-    obj.beRepaired(12);
-    obj.guardGate();
+    ScavTrap test(obj);
+    test.attack("Target");
+    test.takeDamage(11);
+    test.beRepaired(12);
+    test.guardGate();
 
     return 0;
 }

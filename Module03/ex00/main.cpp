@@ -3,9 +3,10 @@
 int main(void)
 {
     ClapTrap obj("Joroh");
-    obj.attack("test");
-    obj.takeDamage(11);
-    obj.beRepaired(11);
+    ClapTrap test(obj);
+    test.attack("Target");
+    test.takeDamage(8);
+    test.beRepaired(5);
 
     return 0;
 }
