@@ -1,4 +1,4 @@
-NAME 			=	clapTrap
+NAME 			=	ClapTrap
 COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp ClapTrap.cpp
 OBJS			=	$(SRC:.cpp=.o)

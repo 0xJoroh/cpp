@@ -1,6 +1,6 @@
 #include "./ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap("ScavTrap Default name"){
+ScavTrap::ScavTrap(): ClapTrap("ScavTrap Default Name"){
     this->_hitpoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
@@ -31,7 +31,13 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rhs){
 }
 
 void ScavTrap::attack(string const & target){
-    std::cout << "ScavTrap " << this->_name  << " attack "  << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;    
+    if (this->_hitpoints < 1 || this->_energyPoints < 1)
+    {
+        std::cout << "ScavTrap dosen't have Hitpoints or EnergyPoints to attack." << std::endl;
+        return;
+    }  
+    --this->_energyPoints;
+    std::cout << "ScavTrap " << this->_name  << " attack "  << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate(){
