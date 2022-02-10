@@ -2,9 +2,11 @@
 
 Dog::Dog(): Animal("Dog")
 {
+    this->_brain = new Brain();
     cout << "Constructors Dog called" << endl;
 }
 Dog::~Dog(){
+    delete this->_brain;
     cout << "Destructors Dog called" << endl;
 }
 Dog::Dog(const Dog &copy){
