@@ -11,7 +11,7 @@ public:
     Dog(const Dog &copy);
     Dog &operator=(const Dog &rhs);
     
-    void makeSound() const;
+    void makeSound() override const;
 };
 
 #endif

@@ -14,13 +14,13 @@ protected:
 public:
     Animal();
     Animal(string type);
-    ~Animal();
+    virtual ~Animal();
 
     Animal(const Animal &copy);
     Animal &operator=(const Animal &rhs);
 
     string getType(void) const;
-    void makeSound() const;
+    virtual void makeSound() const;
 };
 
 #endif

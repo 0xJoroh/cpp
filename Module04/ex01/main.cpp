@@ -2,17 +2,13 @@
 #include "./Dog.hpp"
 
 int main(void) {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    cout << j->getType() << endl;
-    cout << i->getType() << endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-
-    delete meta;
-    delete j;
-    delete i;
+    int i = 0;
+    const Animal* array[10];
+    for (; i < 5; i++)
+        array[i] = new Cat();
+    for (; i < 10; i++)
+        array[i] = new Dog();
+    for (i = 0;i<10;i++)
+        delete array[i];
     return 0;
 }

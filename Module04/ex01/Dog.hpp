@@ -2,6 +2,7 @@
 #define _Dog_H_
 
 #include "./Animal.hpp"
+#include "./Brain.hpp"
 
 class Dog: public Animal{
 private:
