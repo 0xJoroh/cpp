@@ -1,18 +1,22 @@
 #include "./Cat.hpp"
 #include "./Dog.hpp"
+#include "./WrongCat.hpp"
 
 int main(void) {
-    const Animal* meta = new Animal();
+    const WrongAnimal* wrongCat = new WrongCat();
+    const Animal* base = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
+    cout << base->getType() << endl;
     cout << j->getType() << endl;
     cout << i->getType() << endl;
-    i->makeSound(); //will output the cat sound!
     j->makeSound();
-    meta->makeSound();
+    i->makeSound();
+    base->makeSound();
+    cout << "wrongCat->makeSound() = ";
+    wrongCat->makeSound();
 
-    delete meta;
+    delete base;
     delete j;
     delete i;
-    return 0;
 }

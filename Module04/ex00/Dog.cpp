@@ -4,17 +4,21 @@ Dog::Dog(): Animal("Dog")
 {
     cout << "Constructors Dog called" << endl;
 }
-Dog::~Dog(){
+Dog::~Dog()
+{
     cout << "Destructors Dog called" << endl;
 }
-Dog::Dog(const Dog &copy){
+Dog::Dog(const Dog &copy)
+{
     *this = copy;
 }
-Dog &Dog::operator=(const Dog &rhs){
+Dog &Dog::operator=(const Dog &rhs)
+{
     this->type = rhs.type;
     return *this;
 }
 
-void Dog::makeSound() const{
+void Dog::makeSound() const
+{
     cout << "Dog Sound!" << endl;
 }

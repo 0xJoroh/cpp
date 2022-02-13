@@ -11,7 +11,7 @@ public:
     Cat(const Cat &copy);
     Cat &operator=(const Cat &rhs);
 
-    void makeSound() override const;
+    void makeSound() const;
 };
 
 #endif
