@@ -38,6 +38,6 @@ int test(void)
 int main(void)
 {
     test();
-    // system("leaks Brain");
+    // system("leaks Animal_A");
     return 0;
 }
