@@ -15,9 +15,10 @@ class Bureaucrat
 private:
     string const _name;
     int _grade;
-    Bureaucrat();
 
 public:
+    Bureaucrat();
+    Bureaucrat(int grade);
     Bureaucrat(const string name, int grade);
     Bureaucrat(Bureaucrat const &src);
     ~Bureaucrat();
@@ -27,11 +28,10 @@ public:
     const string getName() const;
     int getGrade() const;
 
+    void setGrade(int grade);
+
     void incrementGrade();
     void decrementGrade();
-
-    // static member function
-    static void checkGrade(int grade);
 
     class GradeTooHighException : public std::exception
     {
