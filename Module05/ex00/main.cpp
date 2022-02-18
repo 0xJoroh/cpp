@@ -2,13 +2,10 @@
 
 int main(void)
 {
-    // try
-    // {
-    //     Bureaucrat obj("Joroh", -5);
-    // }
-    // catch (const char *str)
-    // {
-    //     cout << str << endl;
-    // }
+    Bureaucrat obj("Joroh", 3);
+
+    obj.incrementGrade();
+    obj.incrementGrade();
+    obj.incrementGrade();
     return 0;
 }
