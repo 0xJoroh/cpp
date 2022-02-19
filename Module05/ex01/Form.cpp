@@ -41,6 +41,14 @@ void Form::beSigned(Bureaucrat &br)
     }
 }
 
+void Form::signForm(Bureaucrat &br)
+{
+    if (this->_isSigned)
+        cout << br.getName() << " signed " << this->_name << endl;
+    else
+        cout << br.getName() << " couldn’t sign " << this->_name << " because <reason>" << endl;
+}
+
 const char *Form::GradeTooHighException::what() const throw()
 {
     return "form grade is too hight";
