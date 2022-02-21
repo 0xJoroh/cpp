@@ -3,6 +3,12 @@
 
 #include "./Bureaucrat.hpp"
 
+#define string std::string
+#define cout std::cout
+#define endl std::endl
+#define cerr std::cerr
+
+class Bureaucrat;
 class Form
 {
 private:
@@ -13,6 +19,8 @@ private:
 
 public:
     Form();
+    Form(const string name);
+    Form(const string name, const int gradeToSign, const int gradeToExecute);
     ~Form();
 
     Form &operator=(const Form &);
@@ -24,7 +32,6 @@ public:
     int getGradeToExecute() const;
 
     void beSigned(Bureaucrat &br);
-    void signForm();
 
     class GradeTooHighException : public std::exception
     {

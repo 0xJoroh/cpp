@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(const string name, int grade) : _name(name)
     }
 }
 
-Bureaucrat::Bureaucrat(int grade) : _name("Default Name")
+Bureaucrat::Bureaucrat(int grade) : _name("(Bureaucrat Default Name)")
 {
     try
     {
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(int grade) : _name("Default Name")
     }
 }
 
-Bureaucrat::Bureaucrat() : _name("Default Name"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("(Bureaucrat Default Name)"), _grade(150)
 {
     // Default values
 }
@@ -104,6 +104,14 @@ void Bureaucrat::decrementGrade()
     {
         cerr << e.what() << endl;
     }
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    if (form.getIsSigned())
+        cout << this->_name << " signed " << form.getName() << endl;
+    else
+        cout << this->_name << " couldn’t sign " << form.getName() << " because the Bureaucrat has to have grade between 1 and 10" << endl;
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

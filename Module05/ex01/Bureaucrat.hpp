@@ -4,12 +4,14 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "./Form.hpp"
 
 #define string std::string
 #define cout std::cout
 #define endl std::endl
 #define cerr std::cerr
 
+class Form;
 class Bureaucrat
 {
 private:
@@ -32,6 +34,7 @@ public:
 
     void incrementGrade();
     void decrementGrade();
+    void signForm(Form &fr);
 
     class GradeTooHighException : public std::exception
     {

@@ -1,7 +1,26 @@
 #include "./Form.hpp"
 
-Form::Form() : _name("Default Name"), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
+Form::Form() : _name("(Form Default Name)"), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
 {
+}
+
+Form::Form(const string name) : _name(name), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
+{
+}
+
+Form::Form(const string name, const int gradeToSign, const int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+{
+    try
+    {
+        if (gradeToSign > 150 || gradeToExecute > 150)
+            throw Form::GradeTooLowException();
+        if (gradeToSign < 1 || gradeToExecute < 1)
+            throw Form::GradeTooHighException();
+    }
+    catch (std::exception &e)
+    {
+        cerr << e.what() << endl;
+    }
 }
 
 Form::~Form()
@@ -29,8 +48,7 @@ void Form::beSigned(Bureaucrat &br)
 {
     try
     {
-        // the grade should be between 1 and 10
-        if (br.getGrade() < 10)
+        if (br.getGrade() < this->_gradeToSign)
             this->_isSigned = true;
         else
             throw Form::GradeTooLowException();
@@ -39,14 +57,6 @@ void Form::beSigned(Bureaucrat &br)
     {
         cerr << e.what() << endl;
     }
-}
-
-void Form::signForm(Bureaucrat &br)
-{
-    if (this->_isSigned)
-        cout << br.getName() << " signed " << this->_name << endl;
-    else
-        cout << br.getName() << " couldn’t sign " << this->_name << " because <reason>" << endl;
 }
 
 const char *Form::GradeTooHighException::what() const throw()
@@ -59,9 +69,7 @@ const char *Form::GradeTooLowException::what() const throw()
     return "form grade is too low";
 }
 
-std::ostream
-    &
-    operator<<(std::ostream &o, Form &obj)
+std::ostream &operator<<(std::ostream &o, Form &obj)
 {
     o << "Form name:                \t" << obj.getName() << endl;
     o << "Form is signed:           \t" << obj.getIsSigned() << endl;
