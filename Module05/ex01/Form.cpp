@@ -1,10 +1,10 @@
 #include "./Form.hpp"
 
-Form::Form() : _name("(Form Default Name)"), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
+Form::Form() : _name("(Form Default Name)"), _isSigned(false), _gradeToSign(10), _gradeToExecute(10)
 {
 }
 
-Form::Form(const string name) : _name(name), _isSigned(false), _gradeToSign(0), _gradeToExecute(0)
+Form::Form(const string name) : _name(name), _isSigned(false), _gradeToSign(10), _gradeToExecute(10)
 {
 }
 
@@ -48,7 +48,7 @@ void Form::beSigned(Bureaucrat &br)
 {
     try
     {
-        if (br.getGrade() < this->_gradeToSign)
+        if (br.getGrade() <= this->_gradeToSign)
             this->_isSigned = true;
         else
             throw Form::GradeTooLowException();

@@ -111,7 +111,7 @@ void Bureaucrat::signForm(Form &form)
     if (form.getIsSigned())
         cout << this->_name << " signed " << form.getName() << endl;
     else
-        cout << this->_name << " couldn’t sign " << form.getName() << " because the Bureaucrat has to have grade between 1 and 10" << endl;
+        cout << this->_name << " couldn’t sign " << form.getName() << " because the bureaucrat has low grade." << endl;
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

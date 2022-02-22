@@ -28,7 +28,7 @@ int main(void)
     // cout << form;
 
     // -> Bureaucrat Sign form tests
-    // br.setGrade(15);
+    // br.setGrade(10);
     // form.beSigned(br);
     // br.signForm(form);
     return 0;
