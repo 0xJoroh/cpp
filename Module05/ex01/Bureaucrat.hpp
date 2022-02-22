@@ -11,6 +11,7 @@
 #define endl std::endl
 #define cerr std::cerr
 
+// Forward declaration
 class Form;
 class Bureaucrat
 {

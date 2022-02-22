@@ -8,6 +8,7 @@
 #define endl std::endl
 #define cerr std::cerr
 
+// Forward declaration
 class Bureaucrat;
 class Form
 {
@@ -26,12 +27,13 @@ public:
     Form &operator=(const Form &);
     Form(const Form &);
 
-    virtual const string getName() const = 0;
+    const string getName() const;
     bool getIsSigned() const;
     int getGradeToSign() const;
     int getGradeToExecute() const;
 
     void beSigned(Bureaucrat &br);
+    virtual bool execute(Bureaucrat const &executor) const = 0;
 
     class GradeTooHighException : public std::exception
     {

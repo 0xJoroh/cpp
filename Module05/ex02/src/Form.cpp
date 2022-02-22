@@ -1,4 +1,4 @@
-#include "./Form.hpp"
+#include "../includes/Form.hpp"
 
 Form::Form() : _name("(Form Default Name)"), _isSigned(false), _gradeToSign(10), _gradeToExecute(10)
 {
@@ -57,6 +57,25 @@ void Form::beSigned(Bureaucrat &br)
     {
         cerr << e.what() << endl;
     }
+}
+
+bool Form::execute(Bureaucrat const &executor) const
+{
+    try
+    {
+        if (this->_isSigned && executor.getGrade() <= this->_gradeToExecute)
+        {
+            // TODO: Execute something
+            return true;
+        }
+        else
+            throw GradeTooLowException();
+    }
+    catch (std::exception &e)
+    {
+        cerr << e.what() << endl;
+    }
+    return false;
 }
 
 const char *Form::GradeTooHighException::what() const throw()

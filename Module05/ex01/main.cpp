@@ -15,21 +15,21 @@ int main(void)
     cout << br;
 
     // -> decrementGrade & incrementGrade tests
-    // br.setGrade(149);
-    // br.decrementGrade();
-    // br.decrementGrade();
-    // br.setGrade(2);
-    // br.incrementGrade();
-    // br.incrementGrade();
+    br.setGrade(149);
+    br.decrementGrade();
+    br.decrementGrade();
+    br.setGrade(2);
+    br.incrementGrade();
+    br.incrementGrade();
 
     // -> Signe the form tests
-    // br.setGrade(5);
-    // form.beSigned(br); // will sign the form if the bureaucrat grad between 1 and 10
-    // cout << form;
+    br.setGrade(5);
+    form.beSigned(br); // will sign the form if the bureaucrat grad between 1 and 10
+    cout << form;
 
     // -> Bureaucrat Sign form tests
-    // br.setGrade(10);
-    // form.beSigned(br);
-    // br.signForm(form);
+    br.setGrade(10);
+    form.beSigned(br);
+    br.signForm(form);
     return 0;
 }

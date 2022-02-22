@@ -1,4 +1,4 @@
-#include "./Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(const string name, int grade) : _name(name)
 {
@@ -112,6 +112,14 @@ void Bureaucrat::signForm(Form &form)
         cout << this->_name << " signed " << form.getName() << endl;
     else
         cout << this->_name << " couldn’t sign " << form.getName() << " because the bureaucrat has low grade." << endl;
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+    if (form.execute(*this))
+        cout << this->_name << " executed " << form.getName() << endl;
+    else
+        cout << this->_name << " failed to execute " << form.getName() << endl;
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

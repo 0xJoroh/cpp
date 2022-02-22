@@ -1,6 +1,11 @@
 NAME 			=	Form28B
 COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
+SRC 			=	./main.cpp \
+					./src/Bureaucrat.cpp \
+					./src/Form.cpp \
+					./src/RobotomyRequestForm.cpp \
+					./src/PresidentialPardonForm.cpp \
+					./src/ShrubberyCreationForm.cpp
 OBJS			=	$(SRC:.cpp=.o)
 
 all: $(NAME)
