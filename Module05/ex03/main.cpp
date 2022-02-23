@@ -1,3 +1,4 @@
+#include "./includes/Bureaucrat.hpp"
 #include "./includes/Form.hpp"
 #include "./includes/ShrubberyCreationForm.hpp"
 #include "./includes/RobotomyRequestForm.hpp"
@@ -6,12 +7,15 @@
 
 void lfonksion()
 {
+    Bureaucrat br("bureaucrat", 1);
     Intern someRandomIntern;
     Form *rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
     if (rrf)
     {
-        cout << *rrf;
+        // cout << *rrf;
+        rrf->beSigned(br);
+        br.executeForm(*rrf);
         delete rrf;
     }
 }

@@ -1,7 +1,6 @@
 #ifndef _Intern_hpp
 #define _Intern_hpp
 
-#include <string>
 #include "./Form.hpp"
 #include "./ShrubberyCreationForm.hpp"
 #include "./RobotomyRequestForm.hpp"
@@ -15,7 +14,13 @@ public:
     ~Intern();
 
     Intern &operator=(Intern const &rhs);
-    Form *makeForm(string formName, string target);
+    Form *makeForm(string name, string target);
+
+    class FormNotFoundException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
 };
 
 #endif

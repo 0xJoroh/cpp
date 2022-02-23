@@ -12,10 +12,11 @@ Intern::~Intern()
 }
 Intern &Intern::operator=(Intern const &rhs)
 {
-    (void)rhs;
+    if (this != &rhs)
+        *this = rhs;
     return *this;
 }
-Form *Intern::makeForm(string formName, string target)
+Form *Intern::makeForm(string name, string target)
 {
     string names[3] = {"shrubbery request", "robotomy request", "presidential request"};
     Form *forms[3] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
@@ -23,7 +24,7 @@ Form *Intern::makeForm(string formName, string target)
     try
     {
         for (int i = 0; i < 3; i++)
-            if (formName == names[i])
+            if (name == names[i])
             {
                 res = forms[i];
                 cout << "Intern creates " << forms[i]->getName() << endl;
@@ -31,11 +32,16 @@ Form *Intern::makeForm(string formName, string target)
             else
                 delete forms[i];
         if (!res)
-            throw "this form doesn't exist";
+            throw FormNotFoundException();
     }
-    catch (const char *msg)
+    catch (FormNotFoundException &e)
     {
-        cerr << msg << endl;
+        cout << e.what() << endl;
     }
     return res;
+}
+
+const char *Intern::FormNotFoundException::what() const throw()
+{
+    return "this form doesn't exist";
 }
