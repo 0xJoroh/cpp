@@ -116,8 +116,12 @@ void Bureaucrat::signForm(Form &form)
 
 void Bureaucrat::executeForm(Form const &form)
 {
+
     if (form.execute(*this))
+    {
+        form.action(*this);
         cout << this->_name << " executed " << form.getName() << endl;
+    }
     else
         cout << this->_name << " failed to execute " << form.getName() << endl;
 }

@@ -44,6 +44,11 @@ public:
     public:
         virtual const char *what() const throw();
     };
+    class GradeBeSignedException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream &o, Form &obj);
