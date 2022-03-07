@@ -1,5 +1,5 @@
 NAME 			=	ScavTrap
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)

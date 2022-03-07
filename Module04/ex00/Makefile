@@ -1,5 +1,5 @@
 NAME 			=	Animal
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS			=	$(SRC:.cpp=.o)
 

@@ -1,5 +1,5 @@
 NAME 			=	karenFilter
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp Karen.cpp
 OBJS			=	$(SRC:.cpp=.o)
 all: $(NAME)

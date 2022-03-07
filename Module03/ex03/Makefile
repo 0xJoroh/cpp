@@ -1,5 +1,5 @@
 NAME 			=	DiamondTrap
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJS			=	$(SRC:.cpp=.o)
 

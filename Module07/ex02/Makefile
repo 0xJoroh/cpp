@@ -1,6 +1,6 @@
-NAME 			=	convert
+NAME 			=	array
 COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	main.cpp converter.cpp
+SRC 			=	main.cpp
 OBJS			=	$(SRC:.cpp=.o)
 
 all: $(NAME)

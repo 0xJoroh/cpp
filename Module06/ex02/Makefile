@@ -1,5 +1,5 @@
 NAME 			=	akhirTmrin
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp Base.cpp
 OBJS			=	$(SRC:.cpp=.o)
 

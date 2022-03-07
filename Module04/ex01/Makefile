@@ -1,5 +1,5 @@
 NAME 			=	Brain
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS			=	$(SRC:.cpp=.o)
 

@@ -1,5 +1,5 @@
-NAME 			=	
-COMPILE			=	clang++ -Wall -Werror -Wextra -std=c++98
+NAME 			=	template
+COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
 SRC 			=	main.cpp 
 OBJS			=	$(SRC:.cpp=.o)
 
