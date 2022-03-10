@@ -1,4 +1,4 @@
-#include "./converter.hpp"
+#include "./Converter.hpp"
 
 Converter::Converter()
 {
@@ -12,6 +12,7 @@ Converter::Converter(string str)
 {
     this->_value = str;
 }
+
 Converter::~Converter()
 {
 }

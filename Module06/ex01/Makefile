@@ -1,6 +1,6 @@
 NAME 			=	serialize
 COMPILE			=	c++ -Wall -Werror -Wextra -std=c++98
-SRC 			=	main.cpp tools.cpp
+SRC 			=	main.cpp Tools.cpp
 OBJS			=	$(SRC:.cpp=.o)
 
 all: $(NAME)
